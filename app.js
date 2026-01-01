@@ -19,6 +19,8 @@ function getQuote() {
         })
         .catch(() => {
             errorEl.textContent = "Failed To Load Quote. Try Again!";
+            quoteTextEl.textContent = "";
+            quoteAuthorEl.textContent = "";
         });
 
 
