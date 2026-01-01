@@ -4,14 +4,16 @@ const quoteBtnEl = document.getElementById("quoteBtn");
 const errorEl = document.getElementById("error");
 
 
-const API_URL = "https://api.quotable.io/random";
+const API_URL = "https://dummyjson.com/quotes/random";
 
 function getQuote() {
+    quoteTextEl.textContent = "Loading...";
+    quoteAuthorEl.textContent = "";
 
     fetch(API_URL)
         .then(response => response.json())
         .then(data => {
-            quoteTextEl.textContent = data.content;
+            quoteTextEl.textContent = data.quote;
             quoteAuthorEl.textContent = "-" + data.author;
             errorEl.textContent = "";
         })
