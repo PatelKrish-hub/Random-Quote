@@ -8,8 +8,6 @@ const API_URL = "https://api.quotable.io/random";
 
 function getQuote() {
 
-    // API call
-
     fetch(API_URL)
         .then(response => response.json())
         .then(data => {
